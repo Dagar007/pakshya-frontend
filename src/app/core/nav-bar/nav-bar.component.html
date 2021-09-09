@@ -1,0 +1,63 @@
+<mat-toolbar  color="primary">
+  <div class="navbar">
+    <div class="nav-left">
+      <button mat-button class="navbar__logo-button" routerLink="/login">
+        <div class="navbar__logo-button--wrapper">
+          <span class="navbar__logo">P</span> Pakshya
+        </div>
+      </button>
+      <button mat-button routerLink="/posts">
+        Posts
+      </button>
+      <button mat-button>
+        <i class="material-icons" style="margin-right: 5px;">
+          create
+        </i>
+        Create new post
+      </button>
+    </div>
+    <div class="nav-right">
+      <button mat-icon-button >
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <button mat-icon-button >
+        <mat-icon>chat</mat-icon>
+      </button>
+
+      <button mat-button > 
+ 
+      <mat-icon aria-hidden="true" role="img" class="mat-icon notranslate material-icons mat-icon-no-color">arrow_drop_down</mat-icon>
+      </button>
+      <!-- <mat-menu #menu="matMenu">
+        <ng-container *ngIf="(loggedInUser$ | async) as currentUser">
+          <button mat-menu-item [routerLink]="['/profile', currentUser.id]">
+            <div class="select-wrapper">
+              <i class="material-icons">
+                brush
+                </i>
+                <span>Profile</span>
+            </div> 
+            </button>
+        </ng-container>
+        
+        <button mat-menu-item>
+          <div class="select-wrapper">
+            <i class="material-icons">
+              power_settings_new
+              </i>
+              <span>Logout</span>
+          </div>
+          
+          </button>
+      </mat-menu> -->
+      
+      <button mat-button routerLink="/account/login">
+        Login
+      </button>
+      <button mat-button routerLink="/account/signup">
+        Signup
+      </button>
+
+    </div>
+  </div>
+</mat-toolbar>

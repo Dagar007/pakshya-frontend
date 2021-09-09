@@ -1,0 +1,20 @@
+<div class="card " *ngIf="postStats">
+    <div class="sidebar">
+      <p class="sidebar__header">
+        <i class="material-icons sidebar__header--icon">
+          trending_up
+        </i>
+        Trending posts
+      </p>
+      <mat-list class="sidebar__list">
+        <div *ngFor="let p of postStats" class="post-stats">
+          <mat-list-item
+            class="sidebar__list--item"
+            [routerLink]="['/posts', p.postId]"
+            >{{ p.heading }} ({{ p.noOfComments }})</mat-list-item
+          >
+          <mat-divider></mat-divider>
+        </div>
+      </mat-list>
+    </div>
+  </div>
