@@ -6,6 +6,9 @@ import { CategoryComponent } from './category/category.component';
 import { CategoryStatisticsComponent } from './category-statistics/category-statistics.component';
 import { PostStatisticsComponent } from './post-statistics/post-statistics.component';
 import { RouterModule } from '@angular/router';
+import { TimeAgoPipe } from 'time-ago-pipe';
+import { TimeAgoPipePipe } from './pipes/time-ago.pipe';
+import { DateToStringPipe } from './pipes/date-to-string.pipe';
 
 
 
@@ -13,14 +16,16 @@ import { RouterModule } from '@angular/router';
   declarations: [
     CategoryComponent,
     CategoryStatisticsComponent,
-    PostStatisticsComponent
+    PostStatisticsComponent,
+    TimeAgoPipePipe,
+    DateToStringPipe,
   ],
   imports: [
     CommonModule,
     MaterialModule,
     FormsModule,
-    RouterModule
+    RouterModule,
   ],
-  exports: [CommonModule, MaterialModule, FormsModule, CategoryComponent, CategoryStatisticsComponent,PostStatisticsComponent]
+  exports: [CommonModule, MaterialModule, FormsModule, CategoryComponent, CategoryStatisticsComponent,PostStatisticsComponent, TimeAgoPipePipe, DateToStringPipe]
 })
 export class SharedModule { }

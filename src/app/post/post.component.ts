@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CategoryService } from '../core/services/category.service';
 import { Post } from '../shared/models/Post';
 import { PostService } from './post.service';
 
@@ -11,14 +13,19 @@ export class PostComponent implements OnInit {
 
   posts: Post[] = [];
 
-  constructor(private postServce: PostService) { }
+  constructor(private postServce: PostService, private categoryService: CategoryService) { }
 
+  selectedCategory$: Observable<string> | undefined;
   ngOnInit(): void {
-    this.getPosts();
+    this.categoryService.selectedCategoryIdObservable$.subscribe(category => {
+      console.log(category);
+      this.getPosts(category);
+    });
+    
   }
 
-  private getPosts() {
-    this.postServce.getPosts().subscribe(posts => {
+  private getPosts(category: string) {
+    this.postServce.getPosts(category).subscribe(posts => {
       this.posts = posts;
     }, error => {
       console.log(error)

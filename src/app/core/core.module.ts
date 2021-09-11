@@ -7,7 +7,7 @@ import {  HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    NavBarComponent
+    NavBarComponent,
   ],
   imports: [
     CommonModule,
